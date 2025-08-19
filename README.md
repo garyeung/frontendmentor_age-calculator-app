@@ -42,8 +42,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Solution](https://github.com/garyeung/Frontend-Mentor-Challenges/tree/master/age-calculator-app-main)
-- Live Site URL: [Live](https://garyeung.github.io/Frontend-Mentor-Challenges/age-calculator-app-main)
+- Solution URL: [Solution](https://github.com/garyeung/frontendmentor_age-calculator-app)
+- Live Site URL: [Live](https://frontendmentor-age-calculator-app-2.vercel.app/)
 
 
 ## My process
