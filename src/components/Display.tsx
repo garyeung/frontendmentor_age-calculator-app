@@ -1,6 +1,5 @@
 import { useEffect, useRef } from "react";
 import { Age } from "./AgeCalculator";
-import React from "react";
 
 function Display({age}: {age: Age}){
 

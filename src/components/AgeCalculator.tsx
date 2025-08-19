@@ -1,7 +1,6 @@
 import Inputs from "./Inputs";
 import Display from "./Display";
 import { useState } from "react";
-import React from "react";
 
 export interface Age {
     years: string | number,

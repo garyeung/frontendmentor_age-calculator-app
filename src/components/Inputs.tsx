@@ -2,6 +2,7 @@ import { DateTime } from "luxon";
 import { useState } from "react";
 import { Age } from "./AgeCalculator";
 import React from "react";
+import buttonLogo from '/images/icon-arrow.svg';
 
 enum ErrorTypes  {
 NONE = "",
@@ -23,7 +24,6 @@ interface InputdataObj {
 }
 
 function Inputs({pushAge}:{pushAge(x:Age): void}){
-    const buttonUrl = 'images/icon-arrow.svg';
     const data: InputdataObj = {
          day: {
             name: 'day',
@@ -47,10 +47,9 @@ function Inputs({pushAge}:{pushAge(x:Age): void}){
 
     }
 
-    const [buttonLogo, setButtonLogo] = useState(buttonUrl);
     const [birthday, setBirthday] = useState(data);
 
-    const isNaN = (num:any) => {
+    const isNaN = (num: string | number) => {
       return (num == "" )? true: Number.isNaN(num);
     }
 
@@ -59,7 +58,7 @@ function Inputs({pushAge}:{pushAge(x:Age): void}){
         const now = DateTime.now();
         let isValid = true;
 
-        for( let key in updateData){
+        for( const key in updateData){
           const item = updateData[key];
           const value = Number(item.value);
           if(item.value === "")
@@ -177,7 +176,7 @@ function Inputs({pushAge}:{pushAge(x:Age): void}){
     );
 }
 
-function Input({inputdata, pushValue}: {inputdata: Inputdata, pushValue: Function}){
+function Input({inputdata, pushValue}: {inputdata: Inputdata, pushValue: (name: string, value: string) => void}){
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const name = e.target.name;
